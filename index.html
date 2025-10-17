@@ -22,11 +22,12 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             display: flex;
+            flex-direction: column; /* Changed to column for multiple sections */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
 
@@ -52,6 +53,7 @@
             max-width: 700px;
             margin: 20px;
             border: 1px solid var(--primary-color);
+            margin-bottom: 40px; /* Space between sections */
         }
 
         h1 {
@@ -61,6 +63,15 @@
             letter-spacing: 2px;
             line-height: 1.2;
             text-shadow: 0px 0px 15px rgba(192, 132, 252, 0.5);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: var(--secondary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-shadow: 0px 0px 10px rgba(192, 132, 252, 0.3);
         }
 
         p {
@@ -96,6 +107,39 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
 
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 1.1em;
+            text-align: left;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .schedule-table th {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-weight: 700;
+        }
+
+        .schedule-table tbody tr:nth-child(odd) {
+            background-color: var(--bg-accent);
+        }
+
+        .schedule-table tbody tr:nth-child(even) {
+            background-color: #3b4252; /* Slightly different shade for even rows */
+        }
+
+        .schedule-table tbody tr:hover {
+            background-color: var(--primary-color);
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 3rem 2rem;
@@ -103,12 +147,20 @@
             h1 {
                 font-size: 2.8em;
             }
+            h2 {
+                font-size: 2em;
+            }
             p {
                 font-size: 1.1em;
             }
             .register-button {
                 padding: 15px 30px;
                 font-size: 1.2em;
+            }
+            .schedule-table th,
+            .schedule-table td {
+                padding: 10px;
+                font-size: 0.9em;
             }
         }
 
@@ -119,12 +171,22 @@
             h1 {
                 font-size: 2.2em;
             }
+            h2 {
+                font-size: 1.8em;
+            }
             p {
                 font-size: 1em;
             }
             .register-button {
                 padding: 12px 25px;
                 font-size: 1em;
+            }
+            .schedule-table {
+                font-size: 0.8em;
+            }
+            .schedule-table th,
+            .schedule-table td {
+                padding: 8px;
             }
         }
     </style>
@@ -135,6 +197,36 @@
         <h1>AI Summit <span style="color: var(--primary-color);">2025</span></h1>
         <p>Join world-renowned experts and innovators to explore the future of Artificial Intelligence. Discover groundbreaking research, network with industry leaders, and shape tomorrow's AI landscape.</p>
         <a href="#" class="register-button">Register Now</a>
+    </div>
+
+    <div class="container">
+        <h2>Schedule</h2>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Session</th>
+                    <th>Speaker</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9:00 AM</td>
+                    <td>Opening Keynote: The AI Revolution</td>
+                    <td>Dr. Ava Sharma</td>
+                </tr>
+                <tr>
+                    <td>10:30 AM</td>
+                    <td>Panel Discussion: Ethical AI Development</td>
+                    <td>Various Experts</td>
+                </tr>
+                <tr>
+                    <td>1:00 PM</td>
+                    <td>Workshop: Machine Learning in Practice</td>
+                    <td>Prof. Ben Carter</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
